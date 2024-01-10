@@ -25,4 +25,5 @@ function App() {
 }
 
 export default App;  // Agregué la exportación por defecto del componente App
+//Nuevas modificaciones 
 
