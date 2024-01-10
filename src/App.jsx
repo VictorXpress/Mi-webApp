@@ -1,23 +1,28 @@
+import {  Navigate, Route, Routes } from "react-router-dom";
 import Bloques from "./components/bloques";
-import Button  from "./components/button";
-import Layaut  from "./components/layaut";
-import NavBar from "./components/nabvar";
+import Layaut from "./components/layaut";
+import NavBar from "./components/nabvar";  // Corregí la importación de "nabvar"
+import Inicio from "./pages/inicio";
+import Cursos from "./pages/cursos";
+import Footer from "./components/footer";
+
 function App() {
-  
+  return (
+    <div className="bg-secondary min-h-screen">
+      <NavBar />
+      <Layaut>        
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/cursos" element={<Cursos />} />
+            <Route path="*" element={<Navigate to = "/" />} />
+            {/* <Route path="/bloques" element={<Bloques />} /> */}
+          </Routes>
+       
+      </Layaut>
+      <Footer></Footer>
+    </div>
+  );
+}
 
-    return (     
-        <div className="bg-secondary min-h-screen">
-          <NavBar></NavBar>
-          <Layaut>  
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a repudiandae sit earum, officiis id modi voluptatibus quasi nobis. Deleniti est exercitationem ab ipsa temporibus cumque, necessitatibus quas sit perferendis!</p>   
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a repudiandae sit earum, officiis id modi voluptatibus quasi nobis. Deleniti est exercitationem ab ipsa temporibus cumque, necessitatibus quas sit perferendis!</p>  
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero a repudiandae sit earum, officiis id modi voluptatibus quasi nobis. Deleniti est exercitationem ab ipsa temporibus cumque, necessitatibus quas sit perferendis!</p>         
-          </Layaut>
-          <Bloques/>
-     
-        </div>
-      
-    );
-  }
+export default App;  // Agregué la exportación por defecto del componente App
 
-export default App
